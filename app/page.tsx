@@ -16,7 +16,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h1 className="mb-6 text-sm">New Year's Card Generator</h1>
+            <h1 className="mb-6 text-sm">New Year&apos;s Card Generator</h1>
             <h2 className="text-3xl leading-[1.4] mb-6">年賀状カードをつくろう</h2>
             <p className="text-sm leading-[1.6] mb-8">簡単・おしゃれ・すぐにダウンロード</p>
             <Link
