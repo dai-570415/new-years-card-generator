@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
+import Image from 'next/image'
 import html2canvas from "html2canvas"
 
 export default function SharePage() {
@@ -52,8 +53,10 @@ export default function SharePage() {
         <main>
             <div className="flex flex-col justify-between w-[calc(100%-40px)] max-w-[calc(720px)] mx-auto py-8">
                 <div ref={cardRef} className="text-center relative mx-auto my-8 w-[calc(320px)] max-w-[calc(320px)] h-[calc(240px)] bg-white shadow-lg rounded-lg">
-                    <img
+                    <Image
                         src={cardData.imageUrl || "/placeholder.svg"}
+                        width={320}
+                        height={240}
                         alt="Your Card"
                         className="block w-full"
                     />

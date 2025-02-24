@@ -2,6 +2,7 @@
 
 import { useState, useEffect, use } from "react"
 import Link from "next/link"
+import Image from 'next/image'
 
 export default function EditPage({ params }: { params: Promise<{ templateId: string }> }) {
     const [text, setText] = useState("明けましておめでとうございます。")
@@ -29,8 +30,10 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
                 {/* プレビュー */}
                 <div className="text-center relative mx-auto my-8 w-[calc(320px)] max-w-[calc(320px)] h-[calc(240px)] bg-white shadow-lg rounded-lg">
                     {imageUrl && (
-                        <img
+                        <Image
                             src={imageUrl || "/placeholder.svg"}
+                            width={320}
+                            height={240}
                             alt="Template"
                             className="block w-full rounded-lg"
                         />

@@ -20,8 +20,8 @@ export default function TemplatesPage() {
                                 <Image
                                     src={template.image || "/placeholder.svg"}
                                     alt={template.name}
-                                    width={300}
-                                    height={400}
+                                    width={320}
+                                    height={240}
                                     className="w-full"
                                     unoptimized
                                 />
