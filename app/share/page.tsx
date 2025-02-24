@@ -5,8 +5,15 @@ import Link from "next/link"
 import Image from 'next/image'
 import html2canvas from "html2canvas"
 
+type CardData = {
+    imageUrl?: string;
+    text?: string;
+    fontSize?: number;
+    fontColor?: string;
+}
+
 export default function SharePage() {
-    const [cardData, setCardData] = useState<any>(null)
+    const [cardData, setCardData] = useState<CardData | null>(null)
     const cardRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -66,7 +73,10 @@ export default function SharePage() {
                             fontSize: `${cardData.fontSize}px`,
                             color: cardData.fontColor
                         }}>
-                        {cardData.text.split("\n").map((line: string, index: number) => <span key={index}>{line}<br /></span>)}
+                        {(cardData.text ?? "").split("\n").map((line, index) => (
+                            <span key={index}>{line}<br /></span>
+                        ))}
+
                     </div>
                 </div>
 
