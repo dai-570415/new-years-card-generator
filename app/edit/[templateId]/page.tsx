@@ -70,7 +70,20 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
                         </div>
                         <div className="mt-2">
                             <label className="block">フォントカラー:</label>
-                            <input type="color" value={fontColor} onChange={(e) => setFontColor(e.target.value)} className="w-full" />
+                            <input
+                                type="color"
+                                value={fontColor}
+                                onChange={(e) => setFontColor(e.target.value)}
+                                className="w-full"
+                                style={{
+                                    appearance: "none",
+                                    width: "100%",
+                                    height: "40px",
+                                    border: "none",
+                                    padding: "0",
+                                    background: "none"
+                                }}
+                            />
                         </div>
                     </div>
 
