@@ -80,6 +80,7 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
                                     width: "100%",
                                     height: "40px",
                                     border: "none",
+                                    borderRadius: "0px",
                                     padding: "0",
                                     background: "none"
                                 }}
