@@ -75,12 +75,12 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
                     </div>
 
                     {/* ボタン */}
-                    <div className="flex justify-center gap-2">
-                        <Link href="/templates" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">テンプレート選択</Link>
-                        <button onClick={handleSave} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                    <div className="text-center flex justify-center gap-2 flex-wrap">
+                        <Link href="/templates" className="w-full md:w-auto bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">テンプレート選択</Link>
+                        <button onClick={handleSave} className="w-full md:w-auto bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                             保存
                         </button>
-                        <Link href="/share" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">ダウンロード</Link>
+                        <Link href="/share" className="w-full md:w-auto bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">ダウンロード</Link>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@ export default function Home() {
             className="text-center"
           >
             <h1 className="mb-6 text-sm">New Year&apos;s Card Generator</h1>
-            <h2 className="text-3xl leading-[1.4] mb-6">年賀状カードをつくろう</h2>
+            <h2 className="text-3xl leading-[1.4] mb-4">年賀状カードを<br className="sp" />つくろう</h2>
             <p className="text-sm leading-[1.6] mb-8">簡単・おしゃれ・すぐにダウンロード</p>
             <Link
               href="/templates"

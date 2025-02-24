@@ -46,7 +46,7 @@ export default function SharePage() {
         return (
             <div className="text-center fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <p className="my-6">
-                    デザインが保存されていません。<br />
+                    デザインが<br className="sp" />保存されていません。<br />
                     以下ボタンからデザインを作成してください。
                 </p>
                 <Link href="/templates" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
@@ -80,22 +80,22 @@ export default function SharePage() {
                     </div>
                 </div>
 
-                <div className="flex justify-center gap-2 w-[calc(100%)]">
+                <div className="text-center flex justify-center gap-2 w-[calc(100%)] flex-wrap">
                     <button
                         onClick={handleClearStorage}
-                        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                        className="w-full md:w-auto bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
                     >
                         データをクリア
                     </button>
 
                     <button
                         onClick={handleDownload}
-                        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                        className="w-full md:w-auto bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
                     >
                         ダウンロード
                     </button>
 
-                    <Link href="/templates" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    <Link href="/templates" className="w-full md:w-auto bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                         新しい年賀状を作る
                     </Link>
                 </div>
