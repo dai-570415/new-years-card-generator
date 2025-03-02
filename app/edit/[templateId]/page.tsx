@@ -10,6 +10,13 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
     const [fontColor, setFontColor] = useState("#000000")
     const [imageUrl, setImageUrl] = useState("")
 
+    const [fontFamily, setFontFamily] = useState("'Zen Kaku Gothic Antique', sans-serif")
+    const fontOptions = [
+        { id: "1", label: "ゴシック体", value: "'Zen Kaku Gothic Antique', sans-serif" },
+        { id: "2", label: "丸ゴシック体", value: "'Zen Maru Gothic', serif" },
+        { id: "3", label: "明朝体", value: "'EB Garamond', 'Hina Mincho', serif" },
+    ];
+
     const unwrapParams = use(params);
 
     useEffect(() => {
@@ -19,7 +26,7 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
     const handleSave = () => {
         localStorage.setItem(
             "cardData",
-            JSON.stringify({ templateId: unwrapParams.templateId, text, fontSize, fontColor, imageUrl }),
+            JSON.stringify({ templateId: unwrapParams.templateId, text, fontSize, fontColor, fontFamily, imageUrl }),
         )
         alert("保存しました！")
     }
@@ -42,7 +49,8 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
                         className="absolute leading-[1.2] top-1/2 transform -translate-y-1/2 left-[calc(40px)] right-[calc(40px)]"
                         style={{
                             fontSize: `${fontSize}px`,
-                            color: fontColor
+                            color: fontColor,
+                            fontFamily: `${fontFamily}`
                         }}>
                         {text.split("\n").map((line, index) => <span key={index}>{line}<br /></span>)}
                     </div>
@@ -85,6 +93,22 @@ export default function EditPage({ params }: { params: Promise<{ templateId: str
                                     background: "none"
                                 }}
                             />
+                        </div>
+
+                        <div className="flex gap-4 mt-2">
+                            {fontOptions.map((font) => (
+                                <div key={font.id}>
+                                    <input
+                                        type="radio"
+                                        name="fontFamily"
+                                        className="mr-1"
+                                        id={font.id}
+                                        value={font.value}
+                                        onChange={() => setFontFamily(font.value)}
+                                    />
+                                    <label htmlFor={font.id}>{font.label}</label>
+                                </div>
+                            ))}
                         </div>
                     </div>
 

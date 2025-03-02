@@ -10,6 +10,7 @@ type CardData = {
     text?: string;
     fontSize?: number;
     fontColor?: string;
+    fontFamily?: string;
 }
 
 export default function SharePage() {
@@ -71,7 +72,8 @@ export default function SharePage() {
                         className="absolute leading-[1.2] top-1/2 transform -translate-y-1/2 left-[calc(40px)] right-[calc(40px)]"
                         style={{
                             fontSize: `${cardData.fontSize}px`,
-                            color: cardData.fontColor
+                            color: cardData.fontColor,
+                            fontFamily: cardData.fontFamily
                         }}>
                         {(cardData.text ?? "").split("\n").map((line, index) => (
                             <span key={index}>{line}<br /></span>
